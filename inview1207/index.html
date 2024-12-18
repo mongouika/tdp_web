@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main id="main">
+        <section>あか</section>
+        <section>あお</section>
+        <section>しろ</section>
+        <section>きいろ</section>
+    </main>
+    <script>
+        //ウインドウ高さ定義
+        const h = window.innerHeight;
+        //mainタグに用がある
+        const main = document.getElementById("main");
+        //ブラウザをリサイズしたらウインドウの高さを再度定義する
+        addEventListener("resize",function(){
+            const h = window.innerHeight;
+        });
+
+        //ウインドウ内をスクロールしたら
+        window.addEventListener('scroll',function(){
+
+            //スクロール量（px）
+			const scy = window.scrollY;
+            //scyをhで割ったら今何画面目かわかるんじゃない？
+            const stg = scy/h;
+
+            if(stg < 1){
+                main.classList.remove("b","c","d");
+                main.classList.add("a");
+            }else if(stg < 2){
+                main.classList.remove("a","c","d");
+                main.classList.add("b");
+            }else if(stg < 3){
+                main.classList.remove("a","b","d");
+                main.classList.add("c");
+            }else{
+                main.classList.remove("a","b","c");
+                main.classList.add("d");
+            }
+		});
+
+
+    </script>
+</body>
+</html>
