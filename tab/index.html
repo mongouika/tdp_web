@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="globalheader">
+        <div class="frame">
+            <h1>こんにちは</h1>
+
+            <nav>
+                <ul id="menu">
+                    <li>メニュー1</li>
+                    <li>メニュー2</li>
+                    <li>メニュー3</li>
+                    <li>メニュー4</li>
+                </ul>
+                <div id="menu_bt"></div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <div class="tabbox">
+            <nav class="tab_ui">
+                <ul>
+                    <li>1つ目のタブ</li>
+                    <li>2つ目のタブ</li>
+                    <li>3つ目のタブ</li>
+                </ul>
+            </nav>
+            <div class="content">
+                <article>
+                    1つ目のタブの内容1つ目のタブの内容1つ目のタブの内容<br>1111111111<br>1つ目のタブの内容1つ目のタブの内容1つ目のタブの内容<br>1111111111
+                </article>
+                <article>
+                    2つ目のタブの内容 2つ目のタブの内容 2つ目のタブの内容<br>222222222
+                </article>
+                <article>
+                    3つ目のタブの内容 3つ目のタブの内容 3つ目のタブの内容<br>333333333
+                </article>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        //用事のあるものをスクリプト内で呼べるようにする（定義　キャスティング）
+        //兄弟はこの呼び方だと直接配列化される
+        const p = document.querySelectorAll(".tab_ui ul li");
+        const c = document.querySelectorAll(".content article");
+
+        
+        //初期設定
+        p[0].classList.add("active");
+        c[0].classList.add("visible");
+        
+
+        
+        //オブジェクト p に向けて兄弟が何個だろうと同じ処理を予約する
+        p.forEach(function(node , index){
+            node.addEventListener("click",function(){
+                //初期化。クラス名を全部排除する
+                p.forEach(function(element) {
+                    element.classList.remove("active");
+                });
+                c.forEach(function(element) {
+                    element.classList.remove("visible");
+                });
+
+                //構文内 index はクリックされた兄弟が何番目かを返す
+                p[index].classList.add("active");
+                c[index].classList.add("visible");
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //開閉式UI用
+        const ui = document.getElementById("menu");
+        const bt = document.getElementById("menu_bt");
+
+        //#globalheaderの高さ(hgt)を取得する
+
+        bt.addEventListener("click",function(){
+            if(ui.classList.contains("active")){
+                ui.classList.remove("active");
+            }else{
+                ui.classList.add("active");
+                //(hgt)の高さ分(ui)をズラす
+            }
+        });
+
+    
+
+
+    </script>
+
+
+</body>
+</html>
