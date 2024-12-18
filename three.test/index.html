@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r108/three.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  <div class="parent">
+    <div id="sphere"></div>
+    <p class="white">前面の要素 ステートメントとか</p>
+  </div>
+
+
+
+  
+
+  <script>
+    //シーンとカメラとレンダラー
+    var scene = new THREE.Scene();
+    document.addEventListener('mousemove', onMouseMove, false);
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var mouseX;
+    var mouseY;
+
+    //＊処理がやや重くなるのでレンダラーのアンチエイリアスは切ります
+    var renderer = new THREE.WebGLRenderer({alpha:false,antialias:false});
+    //* レンダラーのサイズはcanvasの親ボックス要素から参照がよいかもしれません
+    renderer.setSize (window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    //シーン設置ですが、任意のDOMの中に吐く処理に変更
+    const canvas = document.getElementById('sphere');
+    canvas.appendChild(renderer.domElement);
+    
+    //ウインドウリサイズ時に再描画関数
+    onResize();
+    window.addEventListener('resize', onResize);
+
+    function onResize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+
+
+    //パーティクル設定
+    var distance = Math.min(200, window.innerWidth /4);
+    var geometry = new THREE.Geometry();
+
+    //球面に1000粒貼り付けます
+    for(var i = 0;i < 800; i++){
+      var vertex = new THREE.Vector3();
+
+      var theta = THREE.Math.randFloatSpread(360);
+      var phi = THREE.Math.randFloatSpread(360);
+
+      vertex.x = distance * Math.sin(theta) * Math.cos(phi);
+      vertex.y = distance * Math.sin(theta) * Math.sin(phi);
+      vertex.z = distance * Math.cos(theta);
+
+      geometry.vertices.push(vertex);
+    };
+
+    //パーティクル単体　粒のサイズや色設定
+    var particles = new THREE.Points(geometry, new THREE.PointsMaterial({color:0x0B97E4, size: 2}));
+    particles.boundingSphere = 50;
+
+    //パーティクルグループ
+    var renderingParent = new THREE.Group();
+    renderingParent.add(particles);
+
+    //パーティクルグループ設置
+    var resizeContainer = new THREE.Group();
+    resizeContainer.add(renderingParent);
+    scene.add(resizeContainer);
+
+    //カメラ震度
+    camera.position.z = 400;
+
+
+    //gsapに引っ掛けてくるくるさせます
+    var animate = function(){
+      requestAnimationFrame(animate);
+      renderer.render(scene,camera);
+    };
+
+    var myTween;
+    function onMouseMove(event){
+
+      //この中を全部コメントアウトするとマウス位置に反応して回転する動きをオミットできます
+      if(myTween)
+      myTween.kill();
+
+      mouseX = (event.clientX / window.innerWidth) * 0.3 -1;
+      mouseY = (event.clientY / window.innerHeight) * 0.3 +1;
+      myTween = gsap.to(particles.rotation, {duration: 1, x: mouseY*-1, y: mouseX*-1})
+      
+    };
+
+    animate();
+    
+    //カメラを動かすよりオブジェクトを動かす方が楽なのでgsapで自走させます
+    var animProps = {scale: 1, xRot: 0, yRot: 0};
+    gsap.to(animProps,{duration: 10, scale:0.9, repeat: -1, yoyo: true, ease:"sine", onUpdate:function(){
+      renderingParent.scale.set(animProps.scale,animProps.scale,animProps.scale);
+    }});
+
+    gsap.to(animProps,{duration: 120, xRot: Math.PI*2, yRot: Math.PI*4, repeat: -1, yoyo: true, ease:"none", onUpdate:function(){
+      renderingParent.rotation.set(animProps.xRot,animProps.yRot,0);
+    }});
+
+    
+  </script>
+</body>
+
+</html>
