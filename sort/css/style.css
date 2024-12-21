@@ -1,0 +1,46 @@
+body{
+    opacity:0;
+    animation: fadeIn 1s linear 0s both;
+}
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.ui ul{
+    display:flex;
+}
+.ui ul li{
+    padding:10px;
+}
+
+.result{
+    padding:20px;
+    display:flex; 
+    flex-wrap: wrap;
+    gap:3%;
+}
+
+.result > div{
+    border:1px #ccc solid;
+    width:27%;margin:0 0 20px 0;
+    padding: 2%;
+    display:none;
+}
+.result > div.active{
+    display:block;
+}
+
+
+
+.a{
+    background:red;
+}
+
+.b{
+    background:blue;
+}
+
+.c{
+    background:yellow;
+}

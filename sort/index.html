@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+    <nav class="ui">
+        <ul>
+            <li data-flag="x">リスト要素A</li>
+            <li data-flag="b">リスト要素B</li>
+            <li data-flag="c">リスト要素C</li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul>
+            <li id="all">ぜんぶ</li>
+        </ul>
+    </nav>
+
+
+
+    <article class="result">
+
+        <div class="a active">
+            Aのはこ
+        </div>
+
+        <div class="c active">
+            Cのはこ
+        </div>
+
+        <div class="b active">
+            Bのはこ
+        </div>
+
+        <div class="a active">
+            Aのはこ
+        </div>
+
+        <div class="b active">
+            Bのはこ
+        </div>
+
+        <div class="a active">
+            Aのはこ
+        </div>
+
+        <div class="c active">
+            Cのはこ
+        </div>
+
+        <div class="a active">
+            Aのはこ
+        </div>
+    </article>
+
+
+
+    <script>
+
+        const ui_gr = document.querySelectorAll(".ui ul li");
+        const childs = document.querySelectorAll(".result > div");
+        const all = document.getElementById("all");
+        
+        ui_gr.forEach(function(node , index){
+            node.addEventListener("click",function(){
+                //クリックしたdata属性からフラグを取得する
+                const mydata = ui_gr[index].dataset.flag;
+
+                const my_gr = document.querySelectorAll("."+mydata);
+            
+                childs.forEach(function(element) {
+                    element.classList.remove("active");
+                });
+                my_gr.forEach(function(element) {
+                    element.classList.add("active");
+                });
+            });
+        });
+
+        
+        all.addEventListener("click",function(){
+            const childs = document.querySelectorAll(".result > div");
+            childs.forEach(function(element) {
+                    element.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
