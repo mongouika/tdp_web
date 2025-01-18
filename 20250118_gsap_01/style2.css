@@ -1,0 +1,33 @@
+
+body{
+
+}
+
+section{
+    background:#efefef;
+    border:1px #ddd solid;
+    border-radius:8px;
+    padding:10px 30px;
+    margin:20px 20px 0 20px;
+}
+h4{
+    font-size:20px;
+}
+.set , .square_block{
+    padding:20px;
+    border:1px #ddd solid;
+    background:#fff;
+    border-radius:6px;
+    display:flex;
+    gap:20px;
+    overflow: hidden;
+}
+.circle{
+    width:60px;height:60px;
+    border-radius:50%;
+    background:#333;
+}
+.square{
+    width:60px;height:60px;
+    background:#333;
+}
