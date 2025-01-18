@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+/*reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::selection {
+  background: #2cc218;
+  color: #fff;
+}
+
+:root {
+  --header-h: 58px;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  letter-spacing: .05em;
+}
+.container .g-header {
+  top: 0;
+  height: 58px;
+  background: #666;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+.container .g-footer {
+  height: 158px;
+  background: #333;
+}
+.container .kv {
+  margin-top: var(--header-h);
+  height: calc(100svh - var(--header-h));
+  position: relative;
+  background: url(../images/top_dummy.jpg) center center/cover no-repeat;
+  background-attachment: fixed;
+}
+.container .fixed-bg__container {
+  position: relative;
+  padding-bottom: 1px;
+  margin-bottom: -1px;
+}
+.container .fixed-bg__container .fixed-bg {
+  position: sticky;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+.container .content {
+  background: #fff;
+  margin: -20vh 0 60px;
+}
+.container .content .inner {
+  padding: 40px 0;
+  margin: 0 50px;
+  line-height: 1.7;
+}
+.container .content .inner h2 {
+  font-size: 36px;
+  margin: 0 0 50px 0;
+}
+.container .content .inner p {
+  margin: 0 0 20px 0;
+}
+.container .content .inner .list-demo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 0 0 -10px 0;
+}
+.container .content .inner .list-demo li {
+  width: 49%;
+  margin: 0 0 20px 0;
+  line-height: 1;
+}
+.container .content .inner .list-demo li img {
+  width: 100%;
+}
+.container .content .slide-box {
+  width: 500%;
+  height: 80vh;
+  margin: 0 0 0 -50px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.container .content .slide-box .slides-wrapper {
+  padding: 70px 0 0 0;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100%);
+  height: 100%;
+  gap: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.container .content .slide-box .slides-wrapper .slide {
+  line-height: 1;
+  width: 100%;
+  background: #eee;
+}
+.container .content .slide-box .slides-wrapper .slide img {
+  width: 100%;
+}
+.container .second {
+  margin: 0 0 60px;
+}
+.container .left {
+  margin-right: 12%;
+}
+.container .right {
+  margin-left: 12%;
+}
+
+.animation-target-02 {
+  position: relative;
+}
+
+.animation-target-02::after {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e6e6e6;
+  transition: 1.6s;
+}
+
+.animation-target-02.is-active::after {
+  content: "";
+  right: 0;
+  background: rgba(230, 230, 230, 0);
+  width: 0;
+  height: 100%;
+}
+
+.animation-target-02::before {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: 1s;
+  z-index: 2;
+}
+
+.animation-target-02.is-active::before {
+  content: "";
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: white;
+}
+
+.animation-target-03 {
+  position: relative;
+}
+.animation-target-03 img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  transition: 1.5s;
+}
+
+.animation-target-03.is-active img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+/*microclearfix*/
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */
