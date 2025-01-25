@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+
+<body id="">
+
+    <header class="head">
+
+        <section class="section_1">
+            <section class="splide splide_auto type_a" aria-label="">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">Slide 01</li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                        <li class="splide__slide">Slide 04</li>
+                        <li class="splide__slide">Slide 05</li>
+                        <li class="splide__slide">Slide 06</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="splide splide_auto type_b" aria-label="">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">Slide 01</li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="splide splide_auto type_c" aria-label="">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">Slide 01</li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="classname_a splide" aria-label="">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">Slide 01</li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="classname_b splide" aria-label="">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">Slide 01</li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="section_2">
+
+            <div class="swiper sw_vis">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <ul id="caption">
+                <li>c1c1c1c1c11c1c1c1</li>
+                <li>22222222222222222</li>
+                <li>3333333333333333</li>
+                <li>444444444444444</li>
+                <li>55555555555555</li>
+                <li>66666666666666666</li>
+            </ul>
+
+            <style>
+                #caption > li{
+                    display:none;
+                }
+                #caption > li.active{
+                    display:block;
+                }
+                .swiper-slide {
+                    background: #dddddd;
+                    padding:40px 0;
+                }
+
+                .swiper-slide-active {
+                    background: blue;
+                    text-align: center;
+                }
+            </style>
+
+        </section>
+
+        <nav class="rb">
+            固定されるメニュー
+        </nav>
+    </header>
+
+    <main>
+
+        <form action="">
+
+            <div class="radio_box">
+                <h4>ラジオボタン群</h4>
+                <input type="radio" id="ra" name="r" checked><label for="ra">ラジオボタン</label>
+                <input type="radio" id="rb" name="r"><label for="rb">ラジオボタン</label>
+                <input type="radio" id="rc" name="r"><label for="rc">ラジオボタン</label>
+            </div>
+
+            <div class="check_box">
+                <h4>チェックボックス群</h4>
+                <input type="checkbox" id="ca" name="c"><label for="ca">チェックボックス</label>
+                <input type="checkbox" id="cb" name="c"><label for="cb">チェックボックス</label>
+                <input type="checkbox" id="cc" name="c"><label for="cc">チェックボックス</label>
+            </div>
+
+            <style>
+                /*共通*/
+
+                .radio_box,
+                .check_box {
+                    color: #fff;
+                    padding: 30px;
+                }
+
+                .radio_box h4,
+                .check_box h4 {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin: 0 0 28px 0;
+                }
+
+                .radio_box input,
+                .check_box input {
+                    display: none;
+                }
+
+                .radio_box label,
+                .check_box label {
+                    padding: 4px 0px 4px 30px;
+                    margin: 0 20px 0 0;
+                    position: relative;
+                    cursor: pointer;
+                }
+
+                /*ラジオボタン用*/
+                .radio_box label::before {
+                    content: "";
+                    width: 22px;
+                    height: 22px;
+                    background: #fff;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border-radius: 50%;
+                }
+
+                .radio_box input[type="radio"]+label::after {
+                    content: "";
+                    width: 14px;
+                    height: 14px;
+                    background: #da4daa;
+                    position: absolute;
+                    left: 4px;
+                    top: 4px;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: .4s;
+                }
+
+                .radio_box input[type="radio"]:checked+label::after {
+                    opacity: 1;
+                }
+
+                /*チェックボックス用*/
+                .check_box label::before {
+                    content: "";
+                    width: 22px;
+                    height: 22px;
+                    background: #fff;
+                    position: absolute;
+                    left: 0px;
+                    top: 0;
+                    border-radius: 3px;
+                }
+
+                .check_box input[type="checkbox"]+label::after {
+                    content: "";
+                    width: 12px;
+                    height: 6px;
+                    position: absolute;
+                    border-left: 4px #da4daa solid;
+                    border-bottom: 4px #da4daa solid;
+                    left: 3px;
+                    top: 3px;
+                    transform: rotate(-45deg);
+                    opacity: 0;
+                    transition: .4s;
+                }
+
+                .check_box input[type="checkbox"]:checked+label::after {
+                    opacity: 1;
+                }
+            </style>
+
+        </form>
+
+
+        <h3>youtube</h3>
+        <div class="youtube">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YZLcTv_B-ro?si=5uKOZIu7LkPNHVtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+
+            <img src="assets/img/frame.png" alt="" class="frame">
+        </div>
+
+        <style>
+            .youtube {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                position:relative;
+            }
+            .youtube iframe {
+                width: 100%;
+                height: 100%;
+            }
+            .youtube .frame {
+                width: 100%;
+                height: 100%;
+                position:absolute;top:0;left:0;
+                z-index:20;
+                pointer-events: none;
+            }
+        </style>
+    </main>
+
+
+
+    <script src="assets/js/functions.js"></script>
+</body>
+
+</html>
