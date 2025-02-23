@@ -1,0 +1,237 @@
+*,html {
+    font-family: "Roboto","Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    background: #ededed;
+}
+body.index{
+    height:100vh;/*高さの値が必要*/
+    display:flex;
+    justify-content: center;/*よこ*/
+    align-items: center;/*たて*/
+}
+
+
+
+/*固定ヘッダ*/
+.fixed_header{
+    background:#333;
+    height:60px;
+    display:flex;
+    align-items: center;
+    position: fixed;
+    width:100%;
+    z-index: 998;
+}
+.fixed_header .content{
+    width:100%;
+    max-width: 1200px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 20px;
+}
+.fixed_header .content h1{
+    color:#fff;font-size:24px;
+}
+.fixed_header .content nav ul{
+    display:flex;
+    gap:0 30px;
+}
+.fixed_header .content nav ul li{
+    color:#fff;
+}
+
+
+
+
+
+
+
+.center_box{
+    padding:20px;
+    border:2px #ddd solid;
+    width:280px;
+    line-height: 1.5;
+    text-align: center;
+    background:#fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin:-100px 0 0 0;
+}
+.center_box h1{
+    font-size: 20px;
+    font-weight: 700;
+    padding:0 0 12px 0;
+}
+
+.bt_enter{
+    margin:30px 0 20px 0;
+}
+
+.bt_enter a{
+    padding:12px 30px;
+    background: #21a090;
+    color:#fff;
+    text-decoration: none;
+}
+.bt_enter a:hover{
+    background: #0067ce;
+}
+
+
+
+/***2ページ目用****/
+
+.g_header{
+    background:#bddbdb;
+    padding:90px 30px 30px 30px;
+    height:90px;
+}
+
+main{
+    background:#d1f0f0;
+    padding:30px;
+}
+
+main .test_box{
+    background: #fff;
+    margin:-60px 40px 0 40px;
+    padding:40px;
+    border-radius: 12px;
+    position: relative;
+}
+
+main .test_box .new{
+    position: absolute;
+    top:-20px;
+    right:-20px;
+    background: #FF6600;
+    color:#fff;
+    width:20%;
+    max-width: 60px;
+    aspect-ratio: 1/1;/*超便利*/
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pos_abs{
+    background: #e7f5d6;
+    margin:40px 0 0 0;
+}
+.pos_abs .box_parent{
+    position: relative;
+    height:300px;
+}
+
+.pos_abs .box_parent > div{ /*「直下の子」*/
+    width:150px;height:80px;
+    background:#ddd;
+    position: absolute;
+}
+.pos_abs .box_parent .red{
+    background:red;
+    top:40px;left:60px;
+    z-index: 4;
+}
+.pos_abs .box_parent .blue{
+    background:blue;
+    top:60px;left:130px;
+    z-index: 2;
+}
+.pos_abs .box_parent .yellow{
+    background:yellow;
+    height:120px;
+    top:50px;left:200px;
+    z-index: 3;
+}
+.pos_abs .box_parent .green{
+    background:green;
+    top:110px;left:280px;
+    z-index: 1;
+}
+
+
+/*3ページめ*/
+main.third{
+    padding:90px 30px 30px 30px;
+    width:100%;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+main.third .test_stickey{
+    display: flex;
+    gap:0 30px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin:0 0 30px 0;
+}
+main.third .test_stickey nav{
+    width:200px;
+    background:#ff6600;
+    position: relative;
+}
+main.third .test_stickey nav ul{
+    position: sticky;
+    top:70px;
+}
+main.third .test_stickey nav ul li{
+    margin:0 0 20px 0;
+}
+
+main.third .test_stickey article{
+    flex:1;
+    background:#666;
+}
+main.third .test_stickey article h3{
+    position: sticky;top:60px;
+    background:#fff;
+    padding:10px;
+}
+
+main.third .test_stickey article p{
+    line-height: 1.8;margin:0 0 30px 0;
+}
+
+
+
+
+
+
+
+
+/*モーダルウインドウ*/
+
+.modal_window{
+    background:rgba(0,0,0,0.5);
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    z-index: 999;
+    top:0;
+    left:0; /*位置は必ず決める*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+.modal_window .content{
+    background: #ededed;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding:30px;
+    width:275px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
