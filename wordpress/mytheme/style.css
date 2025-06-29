@@ -1,0 +1,274 @@
+/*
+    Theme Name : mytheme
+    Theme URL : https://mongouika.com/cms/
+    Description : 自前テンプレート実験用
+    Auther : mongouika
+    Version : 1.0.0
+*/
+
+.my_index {
+    background: #ccc;
+}
+
+/*参照リソースは相対で参照できないので画像の場所をフルパスで*/
+.my_fv {
+    width: 100%;
+    background: url('https://mongouika.com/cms/wp-content/themes/mytheme/img/kv.png');
+    background-size: 100%;
+    background-attachment: fixed;
+    aspect-ratio: 2.1/1;
+    display: flex;
+    align-items: center;
+
+    .frame {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        h1 {
+            a {
+                span {
+                    font-size: 42px;
+                    background: #fff;
+                    padding: 8px 16px;
+                }
+
+                text-decoration: none;
+                color:#111;
+            }
+        }
+    }
+}
+
+.my_main {
+    h2 {
+        margin: 0 0 40px 0;
+        text-align: center;
+    }
+
+    .news_sec {
+        width: 100%;
+        max-width: 800px;
+        margin: -40px auto 0 auto;
+        background: #fff;
+        padding: 40px 0 0 0;
+
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 40px 20px 40px;
+
+            dt {
+                width: 20%;
+                padding: 10px;
+                line-height: 1.8;
+            }
+
+            dd {
+                margin: 0;
+                width: 70%;
+                padding: 10px;
+                line-height: 1.8;
+            }
+        }
+    }
+
+
+    .product_sec {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 100px 0;
+
+        .frame {
+            width: 100%;
+            max-width: 1000px;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 50px 5%;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+
+                li {
+                    width: 30%;
+                    background: #fff;
+
+                    a {
+                        display: block;
+                        padding: 20px;
+                        text-decoration: none;
+                        color: #111;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    article {
+        width: calc(100% - 60px);
+        max-width: 1000px;
+        background: #fff;
+        margin: -40px auto 0 auto;
+        padding: 40px 30px;
+
+        h1 {
+            a {
+                text-decoration: none;
+                color: #111;
+            }
+        }
+
+        .meta {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+
+            li {
+                display: inline-block;
+                margin: 0 10px 0 0;
+            }
+        }
+
+        .wp-post-image {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.my_footer {
+    background: #111;
+    padding: 60px 0 100px 0;
+
+    .frame {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .large {
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline-block;
+                    background: #fff;
+                    margin: 0 10px 0 0;
+
+                    a {
+                        text-decoration: none;
+                        display: inline-block;
+                        padding: 8px;
+                        color: #111;
+                    }
+                }
+            }
+        }
+
+        .small {
+            border-top: 1px rgba(255, 255, 255, 0.3) solid;
+            margin: 40px 0 0 0;
+            padding: 40px 0 0 0;
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline-block;
+                    margin: 0 20px 0 0;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+
+
+
+    .my_fv {
+        aspect-ratio: 2.2/1;
+
+        .frame {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+
+            h1 {
+                text-align: center;
+
+                a {
+                    span {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    .my_main {
+        h2 {
+            margin: 0 0 40px 0;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .news_sec {
+            width: calc(100% - 40px);
+            max-width: 800px;
+            margin: -20px auto 0 auto;
+
+            dl {
+                dt {
+                    width: 100%;
+                    border-top: 1px #ddd solid;
+                }
+
+                dd {
+                    width: 100%;
+                }
+            }
+        }
+
+        .product_sec {
+            width: calc(100% - 40px);
+            padding: 70px 0;
+
+            .frame {
+                ul {
+                    gap: 30px 6%;
+
+                    li {
+                        width: 47%;
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .my_footer {
+        .frame {
+            width: calc(100% - 40px);
+        }
+    }
+
+}
