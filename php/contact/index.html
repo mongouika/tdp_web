@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせフォーム</title>
+</head>
+
+<body>
+    
+    <form action="contact.php" method="POST">
+        <div>
+            <label for="name">お名前：</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div>
+            <label for="email">メールアドレス：</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div>
+            <p>お好きな動物</p>
+            <input type="radio" id="dog" name="animal" value="犬" checked><label for="dog">犬</label><br>
+            <input type="radio" id="cat" name="animal" value="猫"><label for="cat">猫</label>
+        </div>
+        <div>
+            <p>お好きな色</p>
+            <input type="checkbox" name="colors[]" value="白" id="check_01"><label for="check_01">白</label>
+            <input type="checkbox" name="colors[]" value="黒" id="check_02"><label for="check_02">黒</label>
+            <input type="checkbox" name="colors[]" value="赤" id="check_03"><label for="check_03">赤</label>
+        </div>
+        <div>
+            <p>お仕事</p>
+            <select name="job">
+                <option value="自営業">自営業</option>
+                <option value="会社員">会社員</option>
+                <option value="パート">パート</option>
+            </select>
+        </div>
+        <div>
+            <label for="message">お問い合わせ本文</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">送信</button><button type="reset">消す</button>
+    </form>
+</body>
+
+</html>
